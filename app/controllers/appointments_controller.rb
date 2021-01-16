@@ -1,2 +1,50 @@
 class AppointmentsController < ApplicationController
+    before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+
+def index
+  
+end
+
+
+def show
+
+end
+
+
+def new
+    @appointment = Appointment.new
+
+end
+
+def edit
+end
+
+def create
+  
+
+end
+
+
+def update
+  
+end
+
+def destroy
+  @appointment.destroy
+end
+
+private
+  # Use callbacks to share common setup or constraints between actions.
+# def set_appointment
+#   @appointment = User.appointments.find_by(id: params[:id])
+#   if @appointment.nil? 
+#     flash[:error] = "Appointment not found."
+#     redirect_to appointments_path
+#   end
+# end
+
+  
+# def appointment_params
+#     params.require(:appointment).permit(:time, :user_id, :service_id)
+# end
 end

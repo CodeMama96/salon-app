@@ -1,0 +1,10 @@
+<h2> Log In</h2>
+
+
+<%= form_for @user do |f| %>
+    <%= f.label :email %>
+    <%= f.collection_select :email, User.all, :email, :email %><br><br>
+    <%= f.label :password %>
+    <%= f.password_field :password%><br><br>
+    <%= f.submit 'Sign In' %><br>
+<% end %>
