@@ -20,7 +20,9 @@ def edit
 end
 
 def create
-  
+  @appointment = Appointment.find_or_create_by(appointment_params)
+  @appointment = current_user.appointments.build
+ 
 
 end
 
@@ -33,18 +35,19 @@ def destroy
   @appointment.destroy
 end
 
+end
+
 private
-  # Use callbacks to share common setup or constraints between actions.
-# def set_appointment
-#   @appointment = User.appointments.find_by(id: params[:id])
-#   if @appointment.nil? 
-#     flash[:error] = "Appointment not found."
-#     redirect_to appointments_path
-#   end
-# end
+  #Use callbacks to share common setup or constraints between actions.
+def set_appointment
+  @appointment = current_user.appointments.find_by(id: params[:id])
+  if @appointment.nil? 
+    flash[:error] = "Appointment not found."
+    redirect_to appointments_path
+  end
+end
 
   
-# def appointment_params
-#     params.require(:appointment).permit(:time, :user_id, :service_id)
-# end
+def appointment_params
+    params.require(:appointment).permit(:time, :user_id, :service_id)
 end
