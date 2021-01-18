@@ -21,7 +21,7 @@ end
 
 def create
   @appointment = Appointment.find_or_create_by(appointment_params)
-  @appointment = current_user.appointments.build
+  
  
 
 end
@@ -49,5 +49,8 @@ end
 
   
 def appointment_params
-    params.require(:appointment).permit(:time, :user_id, :service_id)
+    params.require(:appointment).permit(
+      :time, 
+      :user_id, 
+      :service_id)
 end
