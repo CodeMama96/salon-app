@@ -24,18 +24,12 @@ def create
   @appointment = current_user.appointments.create(appointment_params)
   @appointment.save
   redirect_to appointment_path(@appointment)
-
-
-end
-
-
-def destroy
-  @appointment.destroy
 end
 
 end
 
 private
+
   def set_appointment
   @appointment = current_user.appointments.find_by(id: params[:id])
   if @appointment.nil? 

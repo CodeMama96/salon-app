@@ -18,6 +18,6 @@ class SessionsController < ApplicationController
 
     def destroy
         session.destroy
-        #redirect_to ...
+        redirect_to signin_path
     end
 end

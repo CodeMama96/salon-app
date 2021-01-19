@@ -1,10 +1,10 @@
-<h1 align="center"> Log In</h1>
+<h2 align="center"> Log In</h2>
 
 
-<h2 align="center"><%= form_for @user do |f| %>
+<h3 align="center"><%= form_for @user do |f| %>
     <%= f.label :email %>
     <%= f.email_field :email%><br><br>
     <%= f.label :password %>
     <%= f.password_field :password%><br><br>
-    <%= f.submit 'Sign In' %><br></h2>
+    <%= f.submit 'Sign In' %><br></h3>
 <% end %>

@@ -10,12 +10,12 @@
     <%= f.label :time%>
     <%= f.time_field :time %>
 
-    <h3>Choose Your Service!</h3><br><br>
+    <h3>Choose Your Service!</h3><br>
 
-    <%=f.collection_select(:service_id, Service.all, :id, :name, prompt: "Please select your service!")%>
+    <%=f.collection_select(:service_id, Service.all, :id, :name, prompt: "Please select your service.")%>
         
 
-    <br><br>
+    <br><br><br>
     <%= f.submit 'Set Appointment!'%>
     
 <% end %><br><br>
