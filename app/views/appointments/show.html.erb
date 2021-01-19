@@ -2,3 +2,5 @@
 <h3>It's at <%= @appointment.time %></h3>
 <h3><%= @appointment.date %></h3>
 <h3>You're getting a <%= @appointment.service.name%>!<h3>
+
+<p><%= link_to "Create Another Appointment Here!", new_appointment_path%></p>
