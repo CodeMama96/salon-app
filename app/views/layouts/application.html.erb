@@ -9,8 +9,15 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  
+  <body style="background-color: #f4ebf5">
 
-  <body>
+</body>
+
+
     <%= yield %>
+    <%if session[:user_id]%>
+        <a class="navbar-brand"  href="/logout">Log Out</a>
+        <%end%>
   </body>
 </html>
