@@ -2,6 +2,10 @@
 <div  align="center"><br><br><br><br><br>
 <h2> Schedule An Appointment!</h2><br>
 
+<% flash.each do |type, msg|%>
+    <p><%= msg %></p>
+    <%end%>
+    
 <body> <%= form_for @appointment do |f| %>
     <%= f.label :date%>
     <%= f.date_field :date %>
