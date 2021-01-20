@@ -8,6 +8,19 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%if session[:user_id]%>
+    <div align="right">
+    
+    <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/signin">Home</a>
+    <a class="navbar-brand" href="/logout">Log Out</a>
+    <a class="navbar-brand" href="/signin">Contact Us</a>
+    <a class="navbar-brand" href="/signin">FAQ's</a><hr>
+    <%end%>
+  </style>
+</nav>
+
+</div>
   </head>
   
   <body style="background-color: #f4ebf5">
@@ -16,8 +29,6 @@
 
 
     <%= yield %>
-    <%if session[:user_id]%>
-        <a class="navbar-brand"  href="/logout">Log Out</a>
-        <%end%>
+
   </body>
 </html>
