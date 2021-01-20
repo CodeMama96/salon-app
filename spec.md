@@ -18,7 +18,7 @@ https://guides.rubyonrails.org/active_record_querying.html#scopes
 - [ ] Include nested resource show or index (URL e.g. users/2/recipes)
 https://learning.flatironschool.com/courses/1330/assignments/59538?module_item_id=110921
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [X] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
 - [ ] The application is pretty DRY

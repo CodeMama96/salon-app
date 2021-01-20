@@ -1,3 +1,7 @@
 
 
-<%= render 'form' %>
+<=% @appointments.each do |appointment| %>
+<h3 align="center">It's at <%= @appointment.time.strftime("%I:%M %p") %></h3>
+<h3 align="center"><%= @appointment.date.strftime("%A, %b %d, %Y") %></h3>
+<h3 align="center">You're getting a <%= @appointment.service.name%>!<h3>
+<%end%>
