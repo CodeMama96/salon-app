@@ -1,5 +1,5 @@
 
-<div  align="center"><br><br><br><br><br>
+<div  align="center"><br>
 <h2> Schedule An Appointment!</h2><br>
 
 <% flash.each do |type, msg|%>
@@ -14,12 +14,11 @@
     <%= f.label :time%>
     <%= f.time_field :time %>
 
-    <h3>Choose Your Service!</h3><br>
+    <h3>Choose Your Service!</h3>
 
     <%=f.collection_select(:service_id, Service.all, :id, :name, prompt: "Please select your service.")%>
-        
-
-    <br><br><br>
+    
+    <br><br>
     <%= f.submit 'Set Appointment!'%>
     
 <% end %><br><br>
