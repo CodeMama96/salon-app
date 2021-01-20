@@ -1,7 +1,10 @@
 
-
-<=% @appointments.each do |appointment| %>
-<h3 align="center">It's at <%= @appointment.time.strftime("%I:%M %p") %></h3>
-<h3 align="center"><%= @appointment.date.strftime("%A, %b %d, %Y") %></h3>
-<h3 align="center">You're getting a <%= @appointment.service.name%>!<h3>
-<%end%>
+<p> Here are all the appointments </p><br>
+<% @appointments.each do |appointment| %>
+<%= check_box("delete", appointment.id, {checked: false}) %>
+<%= appointment.time.strftime("%I:%M %p") %>
+<%= appointment.date.strftime("%A, %b %d, %Y") %>
+<%= appointment.service.name%><br>
+<% end %><br>
+<%= submit_tag "delete" %>
+<%= submit_tag "edit", edit_appointment_path %>
