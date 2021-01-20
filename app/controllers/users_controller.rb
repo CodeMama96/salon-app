@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+
+
+    def from_omniauth
+        @user = User.new
+    end
+
     def new
         @user = User.new
     end

@@ -86,6 +86,10 @@ GEM
     concurrent-ruby (1.1.7)
     crass (1.0.6)
     diff-lcs (1.4.4)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.7.0)
     faker (2.15.1)
@@ -140,8 +144,11 @@ GEM
     omniauth (1.9.1)
       hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
-    omniauth-gplus (2.0.1)
-      omniauth-oauth2 (~> 1.1)
+    omniauth-google-oauth2 (0.8.1)
+      jwt (>= 2.0)
+      oauth2 (~> 1.1)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (>= 1.6)
     omniauth-oauth2 (1.7.1)
       oauth2 (~> 1.4)
       omniauth (>= 1.9, < 3)
@@ -208,7 +215,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.1)
-    ruby2_keywords (0.0.2)
+    ruby2_keywords (0.0.4)
     rubyzip (2.3.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -275,12 +282,13 @@ DEPENDENCIES
   bootstrap (~> 4.1.1)
   byebug
   capybara (>= 3.26)
+  dotenv-rails
   faker
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.3)
   omniauth
-  omniauth-gplus (~> 2.0)
+  omniauth-google-oauth2
   omniauth-rails_csrf_protection
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)

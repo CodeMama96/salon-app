@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  #match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post] 
+  match '/auth/:provider/callback', to: 'sessions#omniauth', via: [:get, :post] 
   
   root 'welcome#home'
   get "/signin" => "sessions#new"
