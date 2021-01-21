@@ -6,7 +6,13 @@ Rails.application.routes.draw do
   post '/signin' => "sessions#create"
   get 'logout' => "sessions#destroy"
   
-  resources :stylists, :services, :appointments, :users
+  # resources :services do 
+  #   #resources :appointments, only: [:new, :index, :create, :show, :destroy]
+  # end
+
+  resources :stylists, :appointments, :users, :services
+
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
