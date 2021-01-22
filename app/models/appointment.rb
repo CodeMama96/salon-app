@@ -5,6 +5,6 @@ class Appointment < ApplicationRecord
     validates :date, presence: :true, uniqueness: { scope: :time,
     message: "Appointment is unavailable, please submit again." }
     
-    scope :upcoming, -> {where('date>?', Date.today)}
+    scope :order_by_date, -> {order("date ASC")}
 
 end

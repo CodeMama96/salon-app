@@ -1,7 +1,8 @@
 <p> Here is a list of all the services, please check the one you like and set your appointment! </p>
 
 
-<%= display_header %>
+<h1> All Services </h1>
 <% @services.each do |service| %><br>
     <%= link_to service.name, service_appointments_path(service)%>
 <% end %><br>
+

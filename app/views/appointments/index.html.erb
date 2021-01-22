@@ -1,17 +1,18 @@
 
-<p> Here are all the appointments </p><br>
 
 <%= display_header %>
-   
     <% @appointments.each do |appointment| %>
         <%= appointment.date.strftime("%A, %b %d, %Y") %>
         <%= appointment.service.name%> by
         <%= appointment.user.name%>
-        <%= button_to "delete", appointment_path(appointment), method: "delete"%><br><br>
+        <%= button_to "delete", appointment_path(appointment), method: "delete"%><br>
 <% end %> 
 
 
-<%= link_to "Your Page", user_path(current_user) %>
+<%= link_to "Set an Appointment for this Service", new_service_appointment_path%><br><br>
+
+
+
 
 
 

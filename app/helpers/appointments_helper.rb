@@ -7,7 +7,11 @@ module AppointmentsHelper
         if @service
             content_tag(:h1, "#{@service.name} Service")
         else
-            content_tag(:h1, "All Services" )
+            content_tag(:h1, "All Appointments" )
         end
+    end
+
+    def appointment_by_service
+        #<%= link_to "Appointments By Service", service_appointments_path(appointment.service_id)%>
     end
 end

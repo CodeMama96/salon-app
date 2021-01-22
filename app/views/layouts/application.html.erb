@@ -11,11 +11,11 @@
     <%if session[:user_id]%>
     <div align="right">
     <nav class="navbar navbar-light bg-light">
-   
-    <a class="navbar-brand" href="/users">Home</a>
-    <a class="navbar-brand" href="/logout">Log Out</a>
-    <a class="navbar-brand" href="/signin">Contact Us</a>
-    <a class="navbar-brand" href="/signin">FAQ's</a>
+    <%= link_to "Your Page", user_path(current_user) %>
+    <a href="/logout">Log Out</a>
+    <a href="/signin">Contact Us</a>
+    <a href="/signin">FAQ's</a>
+
     <%end%>
     <h1 align="center"><i style="color: #ba495a"> Ruby's Salon </i></h1>
   </style>

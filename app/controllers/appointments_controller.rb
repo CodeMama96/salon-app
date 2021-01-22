@@ -2,7 +2,11 @@ class AppointmentsController < ApplicationController
     before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
 def index
-  @appointments = Appointment.all
+  if params[:service_id] && @service = Service.find(params[:service_id])
+    @appointments = @service.appointments.order_by_date
+  else
+    @appointments = Appointment.all.order_by_date
+  end
   #logic for service id, check if it's a nestd trout and if it is, find service and appointment associated to that service
 end
 
