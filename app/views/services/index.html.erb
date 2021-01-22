@@ -1,6 +1,5 @@
 <p> Here is a list of all the services, please check the one you like and set your appointment! </p>
 
 <% @services.each do |service| %><br>
-<%= check_box("select", service.id, {checked: false})%>
-<%= service.name%>
-<% end %>
+    <%= link_to service.name, service_appointments_path(service)%>
+<% end %><br>

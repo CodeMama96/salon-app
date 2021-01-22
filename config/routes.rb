@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   post '/signin' => "sessions#create"
   get 'logout' => "sessions#destroy"
   
-  # resources :services do 
-  #   #resources :appointments, only: [:new, :index, :create, :show, :destroy]
-  # end
+  resources :services do 
+    resources :appointments, only: [:new, :index, :create, :show, :destroy]
+  end
 
   resources :stylists, :appointments, :users, :services
 

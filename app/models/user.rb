@@ -3,7 +3,6 @@ class User < ApplicationRecord
     has_many :services, through: :appointment
     
     has_secure_password
-    #skip_before_action :verify_authenticity_token
 
      def self.from_omniauth(response)
         User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |u|

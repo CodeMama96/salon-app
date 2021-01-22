@@ -4,11 +4,11 @@
 
 <% flash.each do |type, msg|%>
     <p><%= msg %></p>
-    <%end%>
-    
+<%end%>
+
 <body> <%= form_for @appointment do |f| %>
     <%= f.label :date%>
-    <%= f.date_field :date %>
+    <%= f.date_field :date, min: Date.today %>
     <br><br>
 
     <%= f.label :time%>

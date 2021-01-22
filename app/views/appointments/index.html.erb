@@ -1,10 +1,26 @@
 
 <p> Here are all the appointments </p><br>
-<% @appointments.each do |appointment| %>
-<%= check_box("delete", appointment.id, {checked: false}) %>
-<%= appointment.time.strftime("%I:%M %p") %>
-<%= appointment.date.strftime("%A, %b %d, %Y") %>
-<%= appointment.service.name%><br>
-<% end %><br>
-<%= submit_tag "delete" %>
-<%= submit_tag "edit" %>
+
+    <% @appointments.each do |appointment| %>
+        <% if appointment.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+    <ul>
+      <% appointment.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+        <%= appointment.date.strftime("%A, %b %d, %Y") %>
+        <%= appointment.service.name%> by
+        <%= appointment.user.name%>
+        <%= button_to "delete", appointment_path(appointment), method: "destroy"%><br><br>
+<% end %> 
+
+
+<%= link_to "Your Page", user_path(current_user) %>
+
+
+

@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-    skip_before_action :verify_authenticity_token
+
+    def index
+        @user = User.new
+    end
 
     def from_omniauth
         @user = User.new
@@ -12,24 +15,29 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        if @user.save
-        session[:user_id] = @user.id
-            redirect_to user_path(@user)
-      else
-        render :new
-        end
+            if @user.save
+                session[:user_id] = @user.id
+                redirect_to user_path(@user)
+            else
+                render :new
+            end
     end
     
     def show
         @user = User.find(params[:id])
+        
+    end
+
+    def upcoming
+        upcoming = current_user.appointments.upcoming
     end
 
     private
 
     def user_params
         params.require(:user).permit(
-        :name,
-        :password,
-        :email)
+            :name,
+            :password,
+            :email)
     end
 end

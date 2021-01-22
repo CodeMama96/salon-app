@@ -1,12 +1,1 @@
-
-<div>
-<br><br><br><br>
-  <div style='width: 600px;margin:auto'>
-    <img  style='width: 600px', background-color= #95c4bc>
-  </div>
-  <h2 align="center"> Welcome to Ruby's Salon, we're glad you're here!</h2>
-  <h3 align="center"><%= link_to "Log In", signin_path %></h3>
-  <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
-  <h3 align="center"><%= link_to "Create A New Account", new_user_path %></h3>
-  
-</div>
+<%= render partial: 'sessions/form'%>
