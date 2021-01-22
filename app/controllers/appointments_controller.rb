@@ -7,7 +7,12 @@ def index
 end
 
 def new
-  @appointment = Appointment.new
+  if params[:service_id] && @service = Service.find(params[:service_id])
+    @appointment = Appointment.new(service_id: params[:service_id])
+    #@appointment = @service.appointments.build
+  else
+    @appointment = Appointment.new
+  end
 end
 
 def show
@@ -34,7 +39,7 @@ end
 def destroy
   @appointment = Appointment.find(params[:id])
   @appointment.destroy
-  redirect_to new_appointment_path
+  redirect_to appointment_path
   # <!-- <%= appointment.time.strftime("%I:%M %p") %> -->
 end
 

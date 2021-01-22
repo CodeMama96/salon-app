@@ -14,6 +14,7 @@
 </h3>
 <h4 align="center">
     <%= form_for @user do |f| %>
+        <%= f.hidden_field :id %>
         <%= f.label :name %>
         <%= f.text_field :name %><br><br>
         <%= f.label :email %>
