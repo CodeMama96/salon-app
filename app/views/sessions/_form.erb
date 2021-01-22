@@ -1,8 +1,13 @@
 <h3 align="center">Log In</h3>
 <h4 align="center">
     <%= form_for @user, url: '/signin' do |f| %>
+    <div>
         <%= f.label :email %>
-        <%= f.email_field :email%><br><br>
+        <%= f.email_field :email%>
+        <div class="requirements">
+      Must be a valid email address.
+        </div>
+    </div><br><br>
         <%= f.label :password %>
         <%= f.password_field :password%><br><br>
         <%= f.submit 'Sign In' %>

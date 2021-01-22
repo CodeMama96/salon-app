@@ -2,6 +2,7 @@
 
 <%= display_header %>
     <% @appointments.each do |appointment| %>
+        <%= appointment.time.strftime("%l:%M %p") %>
         <%= appointment.date.strftime("%A, %b %d, %Y") %>
         <%= appointment.service.name%> by
         <%= appointment.user.name%>

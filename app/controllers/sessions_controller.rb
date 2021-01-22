@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.find_by_name(params[:user][:name])
+        @user = User.find_by_email(params[:user][:email])
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id #logs them in
             redirect_to user_path(@user)
@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        session.destroy
+        session.delete(:user_id)
         redirect_to signin_path
     end
 end

@@ -1,0 +1,29 @@
+<form action="#0">
+
+  <div>
+    <input type="text" id="name" name="name" required placeholder=" " />
+    <label for="name">Name</label>
+  </div>
+  
+  <div>
+    <input type="email" id="email" name="email" required placeholder=" " />
+    <label for="email">Email Address</label>
+    <div class="requirements">
+      Must be a valid email address.
+    </div>
+  </div>
+  
+  <div>
+    <input type="password" id="password" name="password" required placeholder=" " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" />
+    <label for="password">Password</label>
+    <div class="requirements">
+      Your password must be at least 6 characters as well as contain at least one uppercase, one lowercase, and one number.
+    </div>
+  </div>
+  
+  <input type="submit" value="Sign Up" />
+
+</form>
+
+
+

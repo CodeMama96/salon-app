@@ -23,7 +23,7 @@ def show
   @appointment = Appointment.find(params[:id])
   # if blank?
   #   set_appointment
-  # end
+  # end 
 end
 
 def create
@@ -44,7 +44,6 @@ def destroy
   @appointment = Appointment.find(params[:id])
   @appointment.destroy
   redirect_to appointment_path
-  # <!-- <%= appointment.time.strftime("%I:%M %p") %> -->
 end
 
 end

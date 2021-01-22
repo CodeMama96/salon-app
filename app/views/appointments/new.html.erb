@@ -7,6 +7,7 @@
 <%end%>
 
 <body> <%= form_for @appointment do |f| %>
+    <input type="date" id="date" name="date" required>
     <%= f.label :date%>
     <%= f.date_field :date, min: Date.today %>
     <br><br>
