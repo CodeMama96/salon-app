@@ -1,15 +1,16 @@
+<%= render partial: "layouts/error", locals: {object: @user}  %>
+
 <h3 align="center">Log In</h3>
 <h4 align="center">
     <%= form_for @user, url: '/signin' do |f| %>
     <div>
-        <%= f.label :email %>
+        <%= f.label "Email" %>
         <%= f.email_field :email%>
-        <div class="requirements">
-      Must be a valid email address.
-        </div>
     </div><br><br>
-        <%= f.label :password %>
-        <%= f.password_field :password%><br><br>
+    <div>
+        <%= f.label "Password" %>
+        <%= f.password_field :password%>
+    </div><br><br>
         <%= f.submit 'Sign In' %>
     </h4>
     <% end %>
@@ -20,12 +21,12 @@
 <h4 align="center">
     <%= form_for @user do |f| %>
         <%= f.hidden_field :id %>
-        <%= f.label :name %>
-        <%= f.text_field :name %><br><br>
-        <%= f.label :email %>
-        <%= f.email_field :email %><br><br>
-        <%= f.label :password %>
-        <%= f.password_field :password %><br><br>
+        <%= f.label "Name" %>
+        <%= f.text_field :name, required: true %><br><br>
+        <%= f.label "Email" %>
+        <%= f.email_field :email, required: true %><br><br>
+        <%= f.label "Password"%>
+        <%= f.password_field :password, required: true %><br><br>
         <%= f.submit 'Create An Account' %>
     <% end %>   
 </h4>

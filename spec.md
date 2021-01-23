@@ -18,10 +18,10 @@ https://api.rubyonrails.org/v6.1.0/classes/ActiveRecord/Scoping/Named/ClassMetho
 - [X] Include nested resource show or index (URL e.g. users/2/recipes)
 https://learning.flatironschool.com/courses/1330/assignments/59538?module_item_id=110921
 - [X] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [X] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
-- [ ] The application is pretty DRY
+- [X] The application is pretty DRY
 - [X] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [X] Views use helper methods if appropriate
+- [X] Views use partials if appropriate

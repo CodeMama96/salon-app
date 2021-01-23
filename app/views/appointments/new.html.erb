@@ -2,13 +2,10 @@
 <div  align="center"><br>
 <h2> Schedule An Appointment!</h2><br>
 
-<% flash.each do |type, msg|%>
-    <p><%= msg %></p>
-<%end%>
+<%= render partial: "layouts/error", locals: {object: @appointment}  %>
 
 <body> <%= form_for @appointment do |f| %>
-    <input type="date" id="date" name="date" required>
-    <%= f.label :date%>
+    <%= f.label "Date"%>
     <%= f.date_field :date, min: Date.today %>
     <br><br>
 

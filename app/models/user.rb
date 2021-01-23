@@ -1,8 +1,11 @@
 class User < ApplicationRecord
     has_many :appointments
     has_many :services, through: :appointment
-    
     has_secure_password
+
+    validates :name, presence: true
+    validates :password, presence: true
+    validates :email, presence: true
 
      def self.from_omniauth(response)
         User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |u|
@@ -11,6 +14,5 @@ class User < ApplicationRecord
             u.password = SecureRandom.hex(15)
         end
     end
-    # validates :email, uniqueness: {message: "%{value} is already in use.  Please select another or login."}
-    validates :email, presence: true
+
 end
