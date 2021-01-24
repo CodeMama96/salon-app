@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id #logs them in
             redirect_to user_path(@user)
         else
-            render :new
+            redirect_to '/signin'
         end
     end
 

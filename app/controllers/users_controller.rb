@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
     def index
-        @user = User.new
     end
 
     def from_omniauth
@@ -24,7 +23,6 @@ class UsersController < ApplicationController
     
     def show
         @user = User.find(params[:id])
-        
     end
 
     private

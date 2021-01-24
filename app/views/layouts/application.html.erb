@@ -6,14 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+   
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <h1 align="center"><i> Ruby's Salon </i></h1></style>
       <% if session[:user_id] %>
         <%= render 'layouts/navbar' %>
       <%end%>
   </head>
-  
-  <body style="background-color: #f4ebf5">
 
 </body>
 
