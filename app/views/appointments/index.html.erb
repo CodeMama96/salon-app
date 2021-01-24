@@ -6,11 +6,14 @@
         <%= appointment.date.strftime("%A, %b %d, %Y") %>
         <%= appointment.service.name%> by
         <%= appointment.user.name%>
-        <%= button_to "delete", appointment_path(appointment), method: "delete"%><br>
+        <% if current_user == appointment.user %>
+            <%= button_to "delete", appointment_path(appointment), method: "delete"%>
+        <%end%>
+        <br><br>
 <% end %> 
 
 
-<%= link_to "Set an Appointment for this Service", new_service_appointment_path%><br><br>
+<%= link_to "Set an Appointment for this Service", new_service_appointment_path if params[:service_id]%><br><br>
 
 
 

@@ -1,9 +1,7 @@
 <div align="center">
-<h3><p>Welcome <%=@user.name%>! </p>
-<p><%=@user.email%></p>
-
-<p> Here are your upcoming appointments</p>
-
-
-<p><%= link_to "Create An Appointment Here!", new_appointment_path%></p>
-</h3></div>
+<h3><p>Welcome <%=@user.name%>!</h3>
+<p>Logged in as: <%=@user.email%></p>
+<h4><%= link_to "Here Are All The Upcoming Appointments.", appointments_path%></h4>
+<h4><%= link_to "Create An Appointment by Service!", services_path%></h4>
+<h4><%= link_to "Create An Appointment Here!", new_appointment_path%></h4>
+</div>
