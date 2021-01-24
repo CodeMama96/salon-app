@@ -8,18 +8,9 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%if session[:user_id]%>
-    <div align="right">
-    <nav class="navbar navbar-light bg-light">
-    <%= link_to "Home", user_path(current_user) %>
-    <a href="/logout">Log Out</a>
-
-    <%end%>
-    <h1 align="center"><i style="color: #ba495a"> Ruby's Salon </i></h1>
-  </style>
-</nav>
-
-</div>
+      <% if session[:user_id] %>
+        <%= render 'layouts/navbar' %>
+      <%end%>
   </head>
   
   <body style="background-color: #f4ebf5">

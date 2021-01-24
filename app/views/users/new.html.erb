@@ -1,1 +1,33 @@
-<%= render partial: 'sessions/form'%>
+
+<h3 align="center">Log In</h3>
+<h4 align="center">
+    <%= form_for @user, url: '/signin' do |f| %>
+    <div>
+        <%= f.label "Email" %>
+        <%= f.email_field :email%>
+    </div><br><br>
+    <div>
+        <%= f.label "Password" %>
+        <%= f.password_field :password%>
+    </div><br><br>
+        <%= f.submit 'Sign In' %><br><br>
+        <%= button_to "Sign in with Google", '/auth/google_oauth2'%>
+    </h4>
+    
+    <% end %>
+    <br><br>
+<h3 align="center">
+    <strong>First time here? Create an account!</strong>
+</h3>
+<h4 align="center">
+    <%= form_for @user do |f| %>
+        <%= f.hidden_field :id %>
+        <%= f.label "Name" %>
+        <%= f.text_field :name, required: true %><br><br>
+        <%= f.label "Email" %>
+        <%= f.email_field :email, required: true %><br><br>
+        <%= f.label "Password"%>
+        <%= f.password_field :password, required: true %><br><br>
+        <%= f.submit 'Create An Account' %>
+    <% end %>   
+</h4>
