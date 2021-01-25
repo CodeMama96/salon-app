@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+    before_action :redirect_if_not_signed_in, only: [:show, :edit, :update, :delete]
     def index
     end
 

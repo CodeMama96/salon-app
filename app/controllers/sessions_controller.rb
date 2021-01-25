@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+    before_action :user_authenticated, only: [:new]
     skip_before_action :verify_authenticity_token
 
     def omniauth
@@ -28,5 +29,13 @@ class SessionsController < ApplicationController
     def destroy
         session.delete(:user_id)
         redirect_to signin_path
+    end
+
+    private
+
+    def user_authenticated
+        if logged_in?
+        return redirect_to logout_path
+        end
     end
 end

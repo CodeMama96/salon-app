@@ -1,4 +1,6 @@
 <h1> All Stylists </h1>
 <% @stylists.each do |stylist| %><br>
-    <%= link_to stylist.name, stylist_appointments_path(stylist)%>
-<% end %><br>
+    <%= stylist.name %>
+<% end %><br><br>
+
+<%= link_to "All Appointments", appointments_path%>

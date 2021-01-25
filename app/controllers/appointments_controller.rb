@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+    before_action :redirect_if_not_signed_in
     before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
 def index

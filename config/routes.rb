@@ -14,7 +14,10 @@ Rails.application.routes.draw do
     resources :appointments, only: [:new, :index, :create, :show, :destroy]
   end
   
-  resources :stylists, :appointments, :users, :services
+  resources :stylists, only: [:index]
+  resources :appointments, only: [:index, :new, :create, :show, :destroy]
+  resources :users, only: [:index, :new, :show]
+  resources :services, only: [:index]
 
   get '*path', to: redirect('/signin')
 
