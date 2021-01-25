@@ -2,11 +2,15 @@ class AppointmentsController < ApplicationController
     before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
 def index
-  if params[:service_id] && @service = Service.find(params[:service_id])
-    @appointments = @service.appointments.order_by_date
+  if params[:service_id] && @service = Service.find(params[:service_id]) 
+    @appointments = @service.appointments.order_by_date 
   else
     @appointments = Appointment.all.order_by_date
   end
+  # if params[:stylist_id] && @stylist = Stylist.find(params[:stylist_id])
+  #   @appointments = @stylist.appointments
+  # else
+  # end
   #logic for service id, check if it's a nestd trout and if it is, find service and appointment associated to that service
 end
 
@@ -21,9 +25,7 @@ end
 
 def show
   @appointment = Appointment.find(params[:id])
-  # if blank?
-  #   set_appointment
-  # end 
+ 
 end
 
 def create
@@ -35,9 +37,6 @@ def create
       render :new
   end
 
-  # @appointment = current_user.appointments.create(appointment_params)
-  # @appointment.save
-  # redirect_to appointment_path(@appointment)
 end
 
 def destroy
@@ -63,5 +62,6 @@ def appointment_params
     params.require(:appointment).permit(
       :time,
       :date, 
-      :service_id)
+      :service_id,
+      :stylist_id)
 end

@@ -3,12 +3,15 @@
 <%= display_header %>
     <% @appointments.each do |appointment| %>
         <%= appointment.time.strftime("%l:%M %p") %>
-        <%= appointment.date.strftime("%A, %b %d, %Y") %>
-        <%= appointment.service.name%> by
-        <%= appointment.user.name%>
+        <%= appointment.date.strftime("%A, %b %d, %Y") %><br>
+        <%= appointment.service.name%> with
+        <%= appointment.stylist.name%> for
+        <%= appointment.user.name%><br>
+
         <% if current_user == appointment.user %>
             <%= button_to "delete", appointment_path(appointment), method: "delete"%>
         <%end%>
+
         <br><br>
 <% end %> 
 

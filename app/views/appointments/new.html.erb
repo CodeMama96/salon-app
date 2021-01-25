@@ -10,6 +10,10 @@
     <h3>Choose Your Service!</h3>
 
     <%=f.collection_select(:service_id, Service.all, :id, :name, prompt: "Please select your service.")%>
+
+    <h3>Choose Your Stylist!</h3>
+
+    <%=f.collection_select(:stylist_id, Stylist.all, :id, :name, prompt: "Please select your stylist.")%>
     
     <br><br>
     <%= f.submit 'Set Appointment!'%>

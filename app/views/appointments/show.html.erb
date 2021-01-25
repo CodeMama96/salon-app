@@ -2,7 +2,9 @@
 <h3 align="center">It's at <%= @appointment.time.strftime("%I:%M %p") %></h3>
 <h3 align="center"><%= @appointment.date.strftime("%A, %b %d, %Y") %></h3>
 <h3 align="center">You're getting a <%= @appointment.service.name%>!</h3>
+<h3 align="center">With <%= @appointment.stylist.name%>!</h3>
 
 <p align="center"><%= link_to "delete", appointment_path(@appointment), method: 'delete' %></p>
 <h4 align="center"><%= link_to "Create Another Appointment Here!", new_appointment_path%></h4>
 <h4 align="center"><%= link_to "All Services", services_path%>
+<h4 align="center"><%= link_to "All Stylists", stylists_path%>

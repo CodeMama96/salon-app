@@ -4,7 +4,6 @@ class ServicesController < ApplicationController
     end
 
     def new
-      
     end
 
 end
