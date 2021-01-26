@@ -8,10 +8,6 @@ def index
   else
     @appointments = Appointment.all.order_by_date
   end
-  # if params[:stylist_id] && @stylist = Stylist.find(params[:stylist_id])
-  #   @appointments = @stylist.appointments
-  # else
-  # end
   #logic for service id, check if it's a nestd trout and if it is, find service and appointment associated to that service
 end
 
