@@ -20,20 +20,18 @@ def new
   end
 end
 
-def show
-  @appointment = Appointment.find(params[:id])
- 
-end
-
 def create
-  @appointment = Appointment.find_or_create_by(appointment_params)
+  #@appointment = Appointment.find_or_create_by(appointment_params)
   @appointment = current_user.appointments.create(appointment_params)
   if @appointment.save
       redirect_to appointment_path(@appointment)
     else
       render :new
   end
+end
 
+def show
+  @appointment = Appointment.find(params[:id])
 end
 
 def destroy

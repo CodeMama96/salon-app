@@ -7,7 +7,7 @@ Fork
 git clone git@github.com:CodeMama96/salon-app.git
 cd salon-app
 
-
+For OmniAuth, retrieve a secret and client ID from Google and add them to the .env file. DO NOT SHARE CODE.
 * Check Ruby version
 ruby '2.6.1'
 * Install System Dependencies
@@ -18,7 +18,6 @@ Webpack
 
 * Database creation
 rails db:create db:migrate db:seed
-* Database initialization
 
 * Contributors Guide 
 File an issue - Contact: weenum.alicia@gmail.com
