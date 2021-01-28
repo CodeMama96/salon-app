@@ -11,7 +11,4 @@ module AppointmentsHelper
         end
     end
 
-    def appointment_by_service
-        #<%= link_to "Appointments By Service", service_appointments_path(appointment.service_id)%>
-    end
 end
